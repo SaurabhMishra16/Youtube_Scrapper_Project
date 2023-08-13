@@ -10,6 +10,7 @@ from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.chrome.options import Options
 import csv
 import io
 
@@ -28,7 +29,9 @@ def index():
     if request.method == 'POST':
         try:
             searchString = request.form['content'].replace(" ","")
-            driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
+	    options = Options()
+            driver = webdriver.Chrome(options=options)
+            #driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
             #driver.get("https://www.youtube.com/@PW-Foundation/videos")
             youtube_url = "https://www.youtube.com/@" + searchString +"/videos"
             #uClient = uReq(flipkart_url)
