@@ -13,7 +13,7 @@ from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.chrome.options import Options
 import csv
 import io
-
+options = Options()
 
 application = Flask(__name__) # initializing a flask app
 app=application
@@ -32,7 +32,7 @@ def index():
 	    #chrome_options = Options()
 	    #chrome_options.add_argument("--disable-extensions")
 	    #driver = webdriver.Chrome(chrome_options=chrome_options)
-	    options = Options()
+	    #options = Options()
             #driver = webdriver.Chrome(options=options)
             #driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
             #driver.get("https://www.youtube.com/@PW-Foundation/videos")
