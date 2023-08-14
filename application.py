@@ -7,16 +7,12 @@ import pymongo
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 from webdriver_manager.chrome import ChromeDriverManager
-from selenium.webdriver.common.by import By
+#from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
+#from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.chrome.options import Options
 import csv
 import io
-
-chrome_options = Options()
-chrome_options.add_argument("--disable-extensions")
-driver = webdriver.Chrome(chrome_options=chrome_options)
 
 
 application = Flask(__name__) # initializing a flask app
