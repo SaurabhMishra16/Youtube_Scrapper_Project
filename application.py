@@ -14,6 +14,10 @@ from selenium.webdriver.chrome.options import Options
 import csv
 import io
 
+chrome_options = Options()
+chrome_options.add_argument("--disable-extensions")
+driver = webdriver.Chrome(chrome_options=chrome_options)
+
 
 application = Flask(__name__) # initializing a flask app
 app=application
@@ -29,8 +33,11 @@ def index():
     if request.method == 'POST':
         try:
             searchString = request.form['content'].replace(" ","")
-	    options = Options()
-            driver = webdriver.Chrome(options=options)
+	    chrome_options = Options()
+	    chrome_options.add_argument("--disable-extensions")
+	    driver = webdriver.Chrome(chrome_options=chrome_options)
+	    #options = Options()
+            #driver = webdriver.Chrome(options=options)
             #driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
             #driver.get("https://www.youtube.com/@PW-Foundation/videos")
             youtube_url = "https://www.youtube.com/@" + searchString +"/videos"
