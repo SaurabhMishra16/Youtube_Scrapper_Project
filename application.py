@@ -16,6 +16,7 @@ import io
 #options = Options()
 chrome_options = Options()
 chrome_options.add_argument("--disable-extensions")
+driver = webdriver.Chrome(chrome_options=chrome_options)
 
 application = Flask(__name__) # initializing a flask app
 app=application
@@ -31,9 +32,6 @@ def index():
     if request.method == 'POST':
         try:
             searchString = request.form['content'].replace(" ","")
-	    
-	    
-	    driver = webdriver.Chrome(chrome_options=chrome_options)
 	    #options = Options()
             #driver = webdriver.Chrome(options=options)
             #driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
