@@ -10,7 +10,7 @@ from webdriver_manager.chrome import ChromeDriverManager
 #from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 #from selenium.webdriver.support import expected_conditions as EC
-#from selenium.webdriver.chrome.options import Options
+from selenium.webdriver.chrome.options import Options
 import csv
 import io
 
@@ -32,9 +32,9 @@ def index():
 	    #chrome_options = Options()
 	    #chrome_options.add_argument("--disable-extensions")
 	    #driver = webdriver.Chrome(chrome_options=chrome_options)
-	    #options = Options()
+	    options = Options()
             #driver = webdriver.Chrome(options=options)
-            driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
+            #driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
             #driver.get("https://www.youtube.com/@PW-Foundation/videos")
             youtube_url = "https://www.youtube.com/@" + searchString +"/videos"
             #uClient = uReq(flipkart_url)
