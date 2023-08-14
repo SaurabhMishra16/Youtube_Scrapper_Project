@@ -29,7 +29,7 @@ def index():
     if request.method == 'POST':
         try:
             searchString = request.form['content'].replace(" ","")
-	    chrome_options = Options()
+		chrome_options = Options()
 	    chrome_options.add_argument("--disable-extensions")
 	    driver = webdriver.Chrome(chrome_options=chrome_options)
 	    #options = Options()
