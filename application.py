@@ -7,12 +7,14 @@ import pymongo
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 from webdriver_manager.chrome import ChromeDriverManager
-#from selenium.webdriver.common.by import By
+from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
-#from selenium.webdriver.support import expected_conditions as EC
-from selenium.webdriver.chrome.options import Options
+from selenium.webdriver.support import expected_conditions as EC
 import csv
 import io
+from selenium.webdriver.chrome.options import Options
+
+
 
 
 application = Flask(__name__) # initializing a flask app
@@ -29,9 +31,8 @@ def index():
     if request.method == 'POST':
         try:
             searchString = request.form['content'].replace(" ","")
-	    #options = Options()
-            #driver = webdriver.Chrome(options=options)
-            driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
+            options = Options()
+            driver = webdriver.Chrome(options=options)
             #driver.get("https://www.youtube.com/@PW-Foundation/videos")
             youtube_url = "https://www.youtube.com/@" + searchString +"/videos"
             #uClient = uReq(flipkart_url)
