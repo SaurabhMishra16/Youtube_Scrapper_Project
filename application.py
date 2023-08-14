@@ -33,9 +33,9 @@ def index():
             searchString = request.form['content'].replace(" ","")
             #options = Options()
             #driver = webdriver.Chrome(options=options)
-	    service = Service()
-	    options = webdriver.ChromeOptions()   
-	    driver = webdriver.Chrome(service=service, options=options)
+            service = Service()
+            options = webdriver.ChromeOptions()   
+            driver = webdriver.Chrome(service=service, options=options)
             #driver.get("https://www.youtube.com/@PW-Foundation/videos")
             youtube_url = "https://www.youtube.com/@" + searchString +"/videos"
             #uClient = uReq(flipkart_url)
